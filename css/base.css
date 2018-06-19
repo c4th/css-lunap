@@ -1,0 +1,349 @@
+@import "reset.css";
+
+.clearfix::before,
+.clearfix::after {
+	content: "";
+	display: table;
+}
+.clearfix::after {
+	clear: both;
+}
+
+body {
+    background: linear-gradient(to bottom, #f4cfe0 0%,#f9e3ef 100%) fixed;
+}
+
+#lunap {
+    width: 500px;
+    margin: 300px auto;
+    perspective: 1200px;
+    perspective-origin: 50% 50%;
+    position: relative;
+}
+
+#shadow {
+    width: 150px;
+    height: 50px;
+    background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+    transform: rotateX(90deg) translateZ(-350px);
+    z-index: -1;
+    position: absolute;
+    left: 175px;
+    animation: shrink 2s infinite linear;
+    top: 0;
+}
+
+@keyframes bounce {
+    0% {
+        top: 0;
+    }
+    50% {
+        top: 50px;
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes shrink {
+    0% {
+        background: rgba(20, 20, 20, .1);
+        box-shadow: 0 0 50px 35px rgba(20,20,20,.1);
+        border-radius: 200px;
+    }
+    50% {
+        background: rgba(20, 20, 20, .3);
+        box-shadow: 0 0 50px 35px rgba(20,20,20,.3);
+        border-radius: 200px;
+    }
+    100% {
+        background: rgba(20, 20, 20, .1);
+        box-shadow: 0 0 50px 35px rgba(20,20,20,.1);
+        border-radius: 200px;
+    }
+}
+
+/************
+	 FACE
+*************/
+
+#head {
+	width: 300px;
+	height: 300px;
+	position: relative;
+    margin: 0 auto;
+    animation: bounce 2s infinite linear;
+}
+
+#face {
+	position: absolute;
+	background: darkslateblue;
+	width: 300px;
+	height: 300px;
+	border-radius: 300px;
+	z-index: 2;
+	box-shadow: inset -5px -10px 35px midnightblue;
+}
+
+
+#crest {
+    width: 45px;
+    height: 50px;
+    border-radius: 100%;
+    background: transparent;
+    box-shadow: 0 15px 0 gold;
+    z-index: 3;
+    position: absolute;
+    left: calc(50% - 24px);
+    top: 5px;
+}
+
+#antenne {
+    position: absolute;
+    width: 250px;
+    height: 200px;
+    border: 4px solid midnightblue;
+    border-color: midnightblue transparent transparent transparent;
+    border-radius: 50%/100px 100px 0 0;
+    transform: rotate(90deg);
+    top: -155px;
+    left: -60px;
+}
+
+#antenne:before { 
+    content: "";  
+    position: absolute;
+    background: ghostwhite;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    z-index: 2;
+    /*box-shadow: inset -5px 5px 8px lightgray;*/
+    top: 20px;
+    left: 14px;
+    animation: glowInside 1.5s ease-in-out infinite alternate;
+    webkit-animation: glowInside 1.5s ease-in-out infinite alternate;
+    moz-animation: glowInside 1.5s ease-in-out infinite alternate;
+}
+
+ #antenne:after {
+    content: "";  
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    border-radius: 100%;
+    top: 23px;
+    left: 16px;
+    animation: glow 1.5s ease-in-out infinite alternate;
+    webkit-animation: glow 1.5s ease-in-out infinite alternate;
+    moz-animation: glow 1.5s ease-in-out infinite alternate;
+ }
+
+ @keyframes glow {
+    from {
+        box-shadow: 0 0 10px linen;       
+    }
+
+    to {
+        box-shadow: 0 0 30px azure;
+    }
+ }
+
+ @-webkit-keyframes glow {
+    from {
+        box-shadow: 0 0 10px linen;       
+    }
+
+    to {
+        box-shadow: 0 0 30px azure;
+    }
+ }
+
+ @keyframes glowInside {
+    from {        
+        box-shadow: inset -5px 5px 8px gainsboro;
+    }
+
+    to {
+        box-shadow: inset -5px 5px 8px ivory;
+    }
+ }
+
+ @-webkit-keyframes glowInside {
+    from {        
+        box-shadow: inset -5px 5px 8px gainsboro;
+    }
+
+    to {
+        box-shadow: inset -5px 5px 8px ivory;
+    }
+ }
+
+
+/************
+	 EARS
+*************/
+
+.ear {
+	position: absolute;
+	background: darkslateblue;
+	width: 200px;
+	height: 200px;
+	border-radius: 0 160px 0 160px;
+	z-index: 1;
+}
+
+.ear-inside {
+	background: plum;
+	width: 150px;
+    height: 150px;
+	border-radius: 0 120px 0 100px;
+}
+
+#left-ear {
+	left: -15px;
+	top: -15px;
+	box-shadow: inset 0 5px 15px midnightblue;
+}
+
+#right-ear {
+	right: -15px;
+	top: -15px;
+	transform: rotate(90deg);
+	box-shadow: inset 0 -5px 15px midnightblue;
+}
+
+#left-ear-inside {
+    left: -8px;
+    top: -3px;
+	border-radius: 0 120px 0 115px;
+	box-shadow: inset 0 5px 15px orchid;
+}
+
+#right-ear-inside {
+    right: -8px;
+    top: -3px;
+	border-radius: 0 115px 0 120px;
+	box-shadow: inset 3px -5px 15px orchid;
+	transform: rotate(90deg);
+}
+
+
+
+/************
+	 EYES
+*************/
+
+.eye {
+	position: absolute;
+	background: #fff;
+	width: 130px;
+	height: 60px;
+	border-radius: 60px 60px 0 0;
+	z-index: 3;
+	overflow: hidden;
+	top: 95px;
+}
+
+#left-eye {
+    left: 18px;
+}
+
+#right-eye {
+	right: 18px;
+}
+
+.eye-inside {
+    position: absolute;
+    background: midnightblue;
+    width: 50px;
+    height: 60px;
+    border-radius: 0 45px 0 45px;
+    z-index: 4;
+    transform: rotate(36deg);
+}
+
+#left-eye-inside {
+    left: 40px;
+}
+
+#right-eye-inside {
+	right: 40px;
+}
+
+.eyebrow {
+    position: absolute;
+    top: 80px;
+    background: transparent;
+    width: 100px;
+    height: 45px;
+    border-radius: 100%;
+    box-shadow: 0 -2px 0px midnightblue;
+    z-index: 3;
+}
+
+#left-eyebrow {
+    left: 30px;
+}
+
+#right-eyebrow {
+    right: 30px;
+}
+
+
+
+
+/*******************
+	 NOSE & MOUTH
+********************/
+#nose {
+    position: absolute;
+    background: palevioletred;
+    width: 16px;
+    height: 12px;
+    border-radius: 100%;
+    z-index: 4;
+    top: calc(50% + 13px);
+    left: calc(50% - 8px);
+}
+
+#mouth_container {
+    position: absolute;
+    bottom: 75px;
+    left: calc(50% - 15px);
+    perspective: 100px;
+    width: 30px;
+    height: 40px;
+    z-index: 4;
+}
+
+#mouth {
+	position: absolute;
+    background: indianred;
+    width: 30px;
+    height: 50px;
+    border-radius: 0 0 50px 50px;
+    transform: rotateX(-45deg);
+    box-shadow: inset 0 0px 10px maroon;
+}
+
+
+#mouth:before,
+#mouth:after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 20px;
+    border-radius: 100%;
+    background: darkslateblue;
+    box-shadow: 0 2px 0 midnightblue;
+    top: -13px;
+}
+
+#mouth:before {
+    left: -13px;
+}
+
+#mouth:after {
+    left: 15px;
+}
